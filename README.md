@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project presents a security assessment of the vulnerable **Kioptrix Level 1** virtual machine in a controlled laboratory environment using **Kali Linux**, **Nmap**, **Wireshark**, **Metasploit**, and **Oracle VirtualBox**. The objective was to perform network discovery, service enumeration, vulnerability assessment, packet analysis, and security evaluation while following a structured penetration testing methodology. 【1-d830d9】
+This project presents a security assessment of the vulnerable **Kioptrix Level 1** virtual machine in a controlled laboratory environment using **Kali Linux**, **Nmap**, **Wireshark**, **Metasploit**, and **Oracle VirtualBox**. The objective was to perform network discovery, service enumeration, vulnerability assessment, packet analysis, and security evaluation while following a structured penetration testing methodology.
 
 ---
 
@@ -51,7 +51,7 @@ This project presents a security assessment of the vulnerable **Kioptrix Level 1
 - Created a virtual machine for Kioptrix Level 1.
 - Attached the existing VMDK disk image.
 - Configured an isolated NAT network.
-- Verified communication between the auditor and target machines. 【1-d830d9】
+- Verified communication between the auditor and target machines.
 
 ---
 
@@ -98,7 +98,7 @@ nmap -sV 192.168.100.4
 | 443 | HTTPS | Apache SSL |
 | 1024 | RPC Status | RPC Service |
 
-Several services were found to be outdated and potentially vulnerable. 【1-d830d9】
+Several services were found to be outdated and potentially vulnerable.
 
 ---
 
@@ -118,7 +118,7 @@ Detected operating system:
 Linux Kernel 2.4.x
 ```
 
-The identified operating system is an outdated Linux distribution with known security weaknesses. 【1-d830d9】
+The identified operating system is an outdated Linux distribution with known security weaknesses.
 
 ---
 
@@ -138,7 +138,7 @@ sudo nmap -A 192.168.100.4
 - SSH Host Keys
 - Detailed Service Enumeration
 
-The scan revealed multiple legacy services and insecure configurations. 【1-d830d9】
+The scan revealed multiple legacy services and insecure configurations.
 
 ---
 
@@ -158,7 +158,7 @@ sudo nmap -sV --script vuln 192.168.100.4
 - Weak SSL Configuration
 - Known Public Vulnerabilities
 
-The vulnerability assessment confirmed the presence of multiple security weaknesses within the target environment. 【1-d830d9】
+The vulnerability assessment confirmed the presence of multiple security weaknesses within the target environment.
 
 ---
 
@@ -188,7 +188,7 @@ Generated web traffic by accessing the target web server and observed:
 - Status Codes
 - TCP Sessions
 
-Analysis demonstrated that HTTP traffic can be viewed in plaintext and should be protected using encrypted protocols. 【1-d830d9】
+Analysis demonstrated that HTTP traffic can be viewed in plaintext and should be protected using encrypted protocols.
 
 ---
 
@@ -203,7 +203,7 @@ Activities Performed:
 - Metasploit Assessment
 - Authentication Security Review
 
-The assessment highlighted the security risks associated with outdated network services and weak authentication practices. 【1-d830d9】
+The assessment highlighted the security risks associated with outdated network services and weak authentication practices.
 
 ---
 
@@ -285,26 +285,25 @@ Through this project, I gained practical experience in:
 
 ---
 
+## Screenshots
+
+| Host discovery | Service version detection | ICMP capture in Wireshark |
+|---|---|---|
+| ![Host discovery](nmap/hsot%20discovery%20nmap%20sn%20192.168.100.0.jpg) | ![Service detection](nmap/step-8%20service%20version%20detection.jpg) | ![ICMP capture](phase%203%20network%20communication%20observation/step-14%20icmp%20capture%20(ping).jpg) |
+
+---
+
 ## Repository Structure
 
 ```text
-Kioptrix-Level1-Security-Assessment/
-│
+kioptrix-security-assessment-lab/
 ├── README.md
-├── report/
-│   └── Security_Assessment_Report.pdf
-│
-├── screenshots/
-│   ├── host_discovery.png
-│   ├── port_scan.png
-│   ├── service_detection.png
-│   ├── os_detection.png
-│   ├── vulnerability_scan.png
-│   ├── icmp_capture.png
-│   └── http_capture.png
-│
-└── commands/
-    └── commands_used.md
+├── Report.pdf                                     # Full security assessment report
+├── target installation/                           # Setting up the Kioptrix VM
+├── new nat network/                               # Isolated NAT network setup
+├── nmap/                                          # Host discovery, port, OS and vulnerability scans
+├── phase 3 network communication observation/     # Wireshark ICMP and HTTP analysis
+└── phase 4 - Authentication strength evaluation/  # Samba enumeration with Metasploit
 ```
 
 ---
